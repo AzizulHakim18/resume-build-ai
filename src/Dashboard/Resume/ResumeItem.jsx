@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 const ResumeItem = ({ resume }) => {
 
     const title = resume.attributes.title
-    console.log(title);
+    const id = resume.attributes.resumeId
+    console.log(title, id);
     return (
-        <Link to={'/dashboard/resume/' + resume.resumeId + "/edit"}>
+        <Link to={'/dashboard/resume/' + id + "/edit"}>
             <div className='p-14 bg-secondary flex items-center justify-center h-[280px] border border-primary rounded-lg hover:scale-105 transition-all hover:shadow-md shadow-primary'>
                 <Notebook></Notebook>
             </div>
