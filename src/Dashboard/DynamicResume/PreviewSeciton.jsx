@@ -15,11 +15,19 @@ const PreviewSeciton = () => {
             style={{
                 borderColor: resumeInfo?.themeColor
             }}>
-            <EducationalPreview resumeInfo={resumeInfo}></EducationalPreview>
-            <ExperiencePreview resumeInfo={resumeInfo}></ExperiencePreview>
             <PersonalDetils resumeInfo={resumeInfo}></PersonalDetils>
-            <SkillsDetails resumeInfo={resumeInfo}></SkillsDetails>
+
             <SummeryPreview resumeInfo={resumeInfo}></SummeryPreview>
+
+            <ExperiencePreview resumeInfo={resumeInfo}></ExperiencePreview>
+
+            <EducationalPreview resumeInfo={resumeInfo}></EducationalPreview>
+
+            <SkillsDetails resumeInfo={resumeInfo}></SkillsDetails>
+
+
+
+
 
 
         </div>

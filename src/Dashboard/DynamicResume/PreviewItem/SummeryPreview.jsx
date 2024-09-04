@@ -1,10 +1,10 @@
 import React from 'react';
 
-const SummeryPreview = () => {
+const SummeryPreview = ({ resumeInfo }) => {
     return (
-        <div>
-            this is summery priview
-        </div>
+        <p className='text-xs'>
+            {resumeInfo?.summery}
+        </p>
     );
 };
 
