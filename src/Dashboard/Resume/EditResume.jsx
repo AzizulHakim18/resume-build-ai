@@ -11,16 +11,17 @@ const EditResume = () => {
     const [resumeInfo, setResumeInfo] = useState();
     useEffect(() => {
         // console.log(params.resumeId);
-        GetResumeInfo()
+        setResumeInfo(dummy)
+        // GetResumeInfo()
     }, [])
 
 
-    const GetResumeInfo = () => {
-        GlobalApi.GetResumeById(resumeId).then(resp => {
-            console.log(resp.data.data);
-            setResumeInfo(resp.data.data);
-        })
-    }
+    // const GetResumeInfo = () => {
+    //     GlobalApi.GetResumeById(resumeId).then(resp => {
+    //         console.log(resp.data.data);
+    //         setResumeInfo(resp.data.data);
+    //     })
+    // }
 
     return (
         <ResumeInfoContext.Provider value={{ resumeInfo, setResumeInfo }}>
