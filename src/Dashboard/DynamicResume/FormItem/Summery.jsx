@@ -5,6 +5,8 @@ import { Brain, LoaderCircle } from 'lucide-react';
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AIChatSession } from '../../../../service/AiModel';
+import toast from 'react-hot-toast';
+import GlobalApi from '../../../../service/GlobalApi';
 
 const prompt = "Job Title:{jobTitle}, Depends on job title give me list of  summery for 3 experience level, Mid Level and Freasher level in 3 -4 lines in array format, With summery and experience_level Field in JSON Format"
 
@@ -51,7 +53,7 @@ const Summery = ({ enabledNext }) => {
             console.log(resp);
             enabledNext(true);
             setLoading(false);
-            toast("Details updated")
+            toast.success("Details updated")
         }, (error) => {
             setLoading(false);
         })
