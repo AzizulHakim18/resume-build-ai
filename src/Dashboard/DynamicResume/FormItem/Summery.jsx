@@ -8,7 +8,7 @@ import { AIChatSession } from '../../../../service/AiModel';
 import toast from 'react-hot-toast';
 import GlobalApi from '../../../../service/GlobalApi';
 
-const prompt = "Job Title:{jobTitle}, Depends on job title give me list of  summery for 3 experience level, Mid Level and Freasher level in 3 -4 lines in array format, With summery and experience_level Field in JSON Format"
+const prompt = "Job Title:{jobTitle}, Depends on job title give me list of  summery for 3 experience level, Mid Level and Freasher level in 3 -4 lines in array format, With summery and experience_level Field in JSON Format and also make sure that their is no Unexpected non-whitespace character after JSON. every time you should change all 3 level summery section."
 
 
 const Summery = ({ enabledNext }) => {
@@ -33,7 +33,7 @@ const Summery = ({ enabledNext }) => {
         const PROMPT = prompt.replace('{jobTitle}', resumeInfo?.jobTitle);
         console.log(PROMPT);
         const result = await AIChatSession.sendMessage(PROMPT);
-        console.log(JSON.parse(result.response.text()))
+        console.log(result.response.text())
 
         setAiGenerateSummeryList(JSON.parse(result.response.text()))
         setLoading(false);
