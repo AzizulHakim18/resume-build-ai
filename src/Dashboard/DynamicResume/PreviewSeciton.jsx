@@ -25,11 +25,6 @@ const PreviewSeciton = () => {
 
             <SkillsDetails resumeInfo={resumeInfo}></SkillsDetails>
 
-
-
-
-
-
         </div>
     );
 };
