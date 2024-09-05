@@ -8,6 +8,7 @@ import Dashboard from './Dashboard/Dashboard.jsx'
 import { ClerkProvider } from '@clerk/clerk-react'
 import AuthSignIn from './Authentication/AuthSignIn.jsx'
 import EditResume from './Dashboard/Resume/EditResume.jsx'
+import { Toaster } from 'react-hot-toast'
 
 
 // Import your publishable key
@@ -47,6 +48,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
       <RouterProvider router={router}></RouterProvider>
+      <Toaster></Toaster>
     </ClerkProvider>
 
   </StrictMode>,

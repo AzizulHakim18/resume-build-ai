@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const ResumeItem = ({ resume }) => {
 
     const title = resume.attributes.title
-    const id = resume.attributes.resumeId
+    const id = resume.id
     console.log(title, id);
     return (
         <Link to={'/dashboard/resume/' + id + "/edit"}>
