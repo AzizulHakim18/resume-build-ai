@@ -32,7 +32,10 @@ const Experience = () => {
     const [loading, setLoading] = useState(false);
 
 
+    useEffect(() => {
+        resumeInfo?.experience.length > 0 && setExperinceList(resumeInfo?.experience)
 
+    }, [])
     const handleChange = (index, event) => {
         const newEntries = experinceList.slice();
         const { name, value } = event.target;

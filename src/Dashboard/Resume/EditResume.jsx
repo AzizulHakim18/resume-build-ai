@@ -10,18 +10,18 @@ const EditResume = () => {
     const { resumeId } = useParams();
     const [resumeInfo, setResumeInfo] = useState();
     useEffect(() => {
-        // console.log(params.resumeId);
-        setResumeInfo(dummy)
-        // GetResumeInfo()
+
+        // setResumeInfo(dummy)
+        GetResumeInfo()
     }, [])
 
 
-    // const GetResumeInfo = () => {
-    //     GlobalApi.GetResumeById(resumeId).then(resp => {
-    //         console.log(resp.data.data);
-    //         setResumeInfo(resp.data.data);
-    //     })
-    // }
+    const GetResumeInfo = () => {
+        GlobalApi.GetResumeById(resumeId).then(resp => {
+            console.log(resp.data.data.attributes);
+            setResumeInfo(resp.data.data.attributes);
+        })
+    }
 
     return (
         <ResumeInfoContext.Provider value={{ resumeInfo, setResumeInfo }}>
