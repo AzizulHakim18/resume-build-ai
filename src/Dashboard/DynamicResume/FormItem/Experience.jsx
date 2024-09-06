@@ -6,6 +6,8 @@ import { LoaderCircle } from 'lucide-react';
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import RichTextEditor from '../RichTextEditor';
+import GlobalApi from '../../../../service/GlobalApi';
+import toast from 'react-hot-toast';
 
 
 
@@ -62,6 +64,25 @@ const Experience = () => {
         });
     }, [experinceList]);
 
+    const onSave = () => {
+        setLoading(true)
+        const data = {
+            data: {
+                Experience: experinceList.map(({ id, ...rest }) => rest)
+            }
+        }
+
+        console.log(experinceList)
+
+        GlobalApi.UpdateResumeDetail(params?.resumeId, data).then(res => {
+            console.log(res);
+            setLoading(false);
+            toast.success('Details updated !')
+        }, (error) => {
+            setLoading(false);
+        })
+
+    }
 
     return (
         <div>

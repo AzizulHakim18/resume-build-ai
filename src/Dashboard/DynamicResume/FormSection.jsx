@@ -11,7 +11,7 @@ import { ArrowLeft, ArrowRight, LayoutGrid } from 'lucide-react';
 const FormSection = () => {
 
     const [activeFormIndex, setActiveFormIndex] = useState(1);
-    const [enableNext, setEnableNext] = useState(false);
+    const [enableNext, setEnableNext] = useState(true);
     const { resumeId } = useParams();
     return (
         <div>
