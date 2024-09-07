@@ -1,4 +1,4 @@
-import { MoreVertical, Notebook } from 'lucide-react';
+import { Loader2Icon, MoreVertical, Notebook } from 'lucide-react';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
@@ -38,7 +38,7 @@ const ResumeItem = ({ resume, refreshData }) => {
 
     const onDelete = () => {
         setLoading(true);
-        GlobalApi.DeleteResumeById(resume.documentId).then(resp => {
+        GlobalApi.DeleteResumeById(id).then(resp => {
             console.log(resp);
             toast.success('Resume Deleted!');
             refreshData()

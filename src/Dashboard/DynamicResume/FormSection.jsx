@@ -15,7 +15,7 @@ const FormSection = () => {
     const [enableNext, setEnableNext] = useState(true);
     const { resumeId } = useParams();
     return (
-        <div>
+        <div className='sticky top-20'>
             <div className='flex justify-between items-center'>
                 <div className='flex gap-5'>
                     <Link to={"/dashboard"}>
