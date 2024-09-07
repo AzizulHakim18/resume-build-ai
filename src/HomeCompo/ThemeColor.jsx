@@ -42,21 +42,23 @@ const ThemeColor = () => {
                     className="flex gap-2" > <LayoutGrid /> Theme</Button>
             </PopoverTrigger>
             <PopoverContent>
-                <h2 className='mb-2 text-sm font-bold'>Select Theme Color</h2>
-                <div className='grid grid-cols-5 gap-3'>
-                    {colors.map((item, index) => (
-                        <div
-                            onClick={() => onColorSelect(item)}
-                            className={`h-5 w-5 rounded-full cursor-pointer
+                <div className=' p-4 border rounded-lg bg-stone-800 shadow-lg shadow-stone-900'>
+                    <h2 className='mb-2 text-sm font-bold text-white text-center'>Select Theme Color</h2>
+                    <div className='grid grid-cols-5 gap-3 '>
+                        {colors.map((item, index) => (
+                            <div
+                                onClick={() => onColorSelect(item)}
+                                className={`h-5 w-5 rounded-full cursor-pointer
              hover:border-black border
              ${selectedColor == item && 'border border-black'}
              `}
-                            style={{
-                                background: item
-                            }}>
+                                style={{
+                                    background: item
+                                }}>
 
-                        </div>
-                    ))}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </PopoverContent>
         </Popover>
