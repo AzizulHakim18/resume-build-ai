@@ -4,9 +4,9 @@ import Summery from './FormItem/Summery';
 import Experience from './FormItem/Experience';
 import Education from './FormItem/Education';
 import Skills from './FormItem/Skills';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, ArrowRight, LayoutGrid } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Home, LayoutGrid } from 'lucide-react';
 
 const FormSection = () => {
 
@@ -17,7 +17,9 @@ const FormSection = () => {
         <div>
             <div className='flex justify-between items-center'>
                 <div className='flex gap-5'>
-
+                    <Link to={"/dashboard"}>
+                        <Button><Home></Home></Button>
+                    </Link>
                     <Button variant='outline'><LayoutGrid></LayoutGrid>Theme</Button>
 
 
@@ -35,7 +37,15 @@ const FormSection = () => {
                 </div>
             </div>
 
-            {activeFormIndex == 1 ? <PersonalDetails enabledNext={(v) => setEnableNext(v)}></PersonalDetails> : activeFormIndex == 2 ? <Summery enabledNext={(v) => setEnableNext(v)}></Summery> : activeFormIndex == 3 ? <Experience enabledNext={(v) => setEnableNext(v)}></Experience> : activeFormIndex == 4 ? <Education enabledNext={(v) => setEnableNext(v)}></Education> : activeFormIndex == 5 ? <Skills enabledNext={(v) => setEnableNext(v)}></Skills> : null}
+            {activeFormIndex == 1 ? <PersonalDetails enabledNext={(v) => setEnableNext(v)}></PersonalDetails>
+                : activeFormIndex == 2 ? <Summery enabledNext={(v) => setEnableNext(v)}></Summery>
+                    : activeFormIndex == 3 ? <Experience enabledNext={(v) => setEnableNext(v)}></Experience>
+                        : activeFormIndex == 4 ? <Education enabledNext={(v) => setEnableNext(v)}></Education>
+                            : activeFormIndex == 5 ? <Skills enabledNext={(v) => setEnableNext(v)}></Skills>
+                                : activeFormIndex == 6 ?
+                                    <Navigate to={'/myresume/' + resumeId + "/view"} />
+
+                                    : null}
 
         </div>
     );

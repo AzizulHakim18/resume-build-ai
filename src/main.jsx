@@ -9,6 +9,7 @@ import { ClerkProvider } from '@clerk/clerk-react'
 import AuthSignIn from './Authentication/AuthSignIn.jsx'
 import EditResume from './Dashboard/Resume/EditResume.jsx'
 import { Toaster } from 'react-hot-toast'
+import ResumeView from './Dashboard/MyResume/ResumeView.jsx'
 
 
 // Import your publishable key
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: '/auth/signin',
     element: <AuthSignIn></AuthSignIn>
+  },
+  {
+    path: "/myresume/:resumeId/view",
+    element: <ResumeView></ResumeView>
   }
 ])
 
