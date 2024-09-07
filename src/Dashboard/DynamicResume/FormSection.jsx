@@ -7,6 +7,7 @@ import Skills from './FormItem/Skills';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ArrowRight, Home, LayoutGrid } from 'lucide-react';
+import ThemeColor from '@/HomeCompo/ThemeColor';
 
 const FormSection = () => {
 
@@ -20,7 +21,7 @@ const FormSection = () => {
                     <Link to={"/dashboard"}>
                         <Button><Home></Home></Button>
                     </Link>
-                    <Button variant='outline'><LayoutGrid></LayoutGrid>Theme</Button>
+                    <ThemeColor></ThemeColor>
 
 
                 </div>

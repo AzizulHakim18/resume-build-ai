@@ -1,4 +1,11 @@
-import React from 'react';
+import { Button } from '@/components/ui/button';
+import { ResumeInfoContext } from '@/ContextInfo/ResumeInfoContext';
+import { Popover, PopoverContent, PopoverTrigger } from '@radix-ui/react-popover';
+import React, { useContext, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import GlobalApi from '../../service/GlobalApi';
+import { LayoutGrid } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 const ThemeColor = () => {
     const colors = [
@@ -24,14 +31,35 @@ const ThemeColor = () => {
         }
         GlobalApi.UpdateResumeDetail(resumeId, data).then(resp => {
             console.log(resp);
-            toast('Theme Color Updated')
+            toast.success('Theme Color Updated')
         })
     }
 
     return (
-        <div>
+        <Popover>
+            <PopoverTrigger asChild>
+                <Button variant="outline" size="sm"
+                    className="flex gap-2" > <LayoutGrid /> Theme</Button>
+            </PopoverTrigger>
+            <PopoverContent>
+                <h2 className='mb-2 text-sm font-bold'>Select Theme Color</h2>
+                <div className='grid grid-cols-5 gap-3'>
+                    {colors.map((item, index) => (
+                        <div
+                            onClick={() => onColorSelect(item)}
+                            className={`h-5 w-5 rounded-full cursor-pointer
+             hover:border-black border
+             ${selectedColor == item && 'border border-black'}
+             `}
+                            style={{
+                                background: item
+                            }}>
 
-        </div>
+                        </div>
+                    ))}
+                </div>
+            </PopoverContent>
+        </Popover>
     );
 };
 

@@ -62,7 +62,8 @@ const ResumeItem = ({ resume, refreshData }) => {
                 {/* <h2 className='text-center my-1 font-bold text-xl'>{title}</h2> */}
             </Link>
 
-            <div className='border p-3 flex justify-between font-bold rounded-b-lg shadow-lg'
+            <div className='border p-3 flex justify-between font-bold
+             rounded-b-lg shadow-lg'
                 style={{
                     background: resume?.themeColor
                 }}>
